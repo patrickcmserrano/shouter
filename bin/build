@@ -1,0 +1,1 @@
+clojure -A:depstar -m hf.depstar.uberjar Shouter.jar
