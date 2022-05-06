@@ -7,9 +7,15 @@
            hiccup/hiccup             {:mvn/version "1.0.5"}
            ring/ring-defaults        {:mvn/version "0.3.3"}
            ring/ring-anti-forgery    {:mvn/version "1.3.0"}}
- :aliases {:run   {:main-opts ["-m" "shouter.server"]}
-           :build {:deps       {io.github.clojure/tools.build {:git/tag "v0.8.1" :git/sha "7d40500"}}
-                   :ns-default build}}}
+ :aliases {:run     {:main-opts ["-m" "shouter.server"]}
+           ;; build an uberjar (application) with AOT compilation by default:
+           :uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+                     :exec-fn      hf.depstar/uberjar
+                     :exec-args    {:aot true}}
+           ;; build a jar (library):
+           :jar     {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
+                     :exec-fn      hf.depstar/jar
+                     :exec-args    {}}}}
 
 
 
