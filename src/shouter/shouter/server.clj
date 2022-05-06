@@ -6,7 +6,8 @@
             [shouter.models.migrations]
             [ring.middleware.resource :refer [wrap-resource]]
             [shouter.controllers.shouts :as controllers.shouts]
-            [shouter.views.layout :as view.layout]))
+            [shouter.views.layout :as view.layout])
+  (:gen-class))
 
 (def port
   (new Integer (or (System/getenv "PORT")

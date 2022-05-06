@@ -10,7 +10,6 @@
 
 (defn create [shout]
   (when-not (str/blank? shout)
-    (clojure.pprint/pprint shout)
     (model.shouts/create shout)
     (ring.util.response/redirect "/")))
 
