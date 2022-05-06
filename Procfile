@@ -1,1 +1,1 @@
-web: java -cp Shouter.jar clojure.main -m shouter.server
+web: java $JVM_OPTS -jar target/shouter-standalone.jar
