@@ -1,6 +1,8 @@
 (ns shouter.models.shouts
   (:require [clojure.java.jdbc :as jdbc]))
 
+
+;;Definindo porta de comunicação com postgres
 (def postgres-port
   (or (System/getenv "DATABASE_URL")
       "postgresql://localhost:5432/shouter"))

@@ -1,6 +1,8 @@
 (ns shouter.views.layout
   (:require [hiccup.page :as h]))
 
+
+;;Head de HTML comum para a aplicação no geral
 (defn common [title & body]
   (h/html5
     [:head

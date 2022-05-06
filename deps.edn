@@ -17,5 +17,11 @@
                      :exec-fn      hf.depstar/jar
                      :exec-args    {}}}}
 
+;;O projeto como deps.edn não é nativamente suportado pelo Heroku
+;;Na verdade há suporte, mas precisam de workaround para realizar o deploy
+;;Heroku nativamente suporta lein com o project.clj
+;;Lein tem ferramenta de build uberjar nativa
+;;https://www.gertgoet.com/2019/02/06/deploying-a-tools-deps-clojure-project-to-heroku.html
+;;https://devcenter.heroku.com/articles/clojure-support#overriding-build-behavior
 
 

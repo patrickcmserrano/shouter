@@ -7,13 +7,16 @@
             [clojure.string :as str]))
 
 
-
+;;Função para criar uma shout no postgres
+;;Essa transação poderia ser protegida em um try-catch
+;;IO
 (defn create [shout]
   (when-not (str/blank? shout)
     (model.shouts/create shout)
     (ring.util.response/redirect "/")))
 
+
+;;Definição de rotas relevantes para o contexto shout
 (defroutes routes
            (GET "/" [] (views.shouts/index (model.shouts/all)))
-           (POST "/" [shout] (create shout))
-           (POST "/ping" request (ring.util.response/redirect "/")))
+           (POST "/" [shout] (create shout)))
