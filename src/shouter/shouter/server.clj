@@ -25,10 +25,12 @@
 (defonce server (atom nil))
 
 (defn start []
+  (prn (str "Starting server on port: " port))
   (reset! server (ring.adapter.jetty/run-jetty application {:port  port
                                                             :join? false})))
 
 (defn stop []
+  (prn "Stopping server")
   (.stop @server)
   (reset! server nil))
 
